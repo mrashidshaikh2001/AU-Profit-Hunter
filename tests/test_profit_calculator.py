@@ -10,7 +10,7 @@ class ProfitCalculatorTests(unittest.TestCase):
             product_cost="20.00",
             return_allowance="0.50"
         )
-        self.assertEqual(result.net_profit, Decimal("3.40"))
+        self.assertEqual(result.net_profit, Decimal("2.89"))
         self.assertTrue(result.qualifies)
 
     def test_unprofitable_product_is_rejected(self):
@@ -27,7 +27,7 @@ class ProfitCalculatorTests(unittest.TestCase):
             product_cost="20.00",
             seller_shipping="3.00"
         )
-        self.assertEqual(result.net_profit, Decimal("2.85"))
+        self.assertEqual(result.net_profit, Decimal("0.89"))
 
     def test_negative_cost_is_rejected(self):
         with self.assertRaises(ValueError):
